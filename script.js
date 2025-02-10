@@ -1,11 +1,12 @@
 
-console.log("Inizio");
+console.log("1 Inizio caricamento...");
 
 setTimeout(() => {
-  console.log("Timeout");
+  console.log("2 Mostra animazione di caricamento...");
 }, 0);
 
-Promise.resolve().then(() => console.log("Promise"));
+fetch("https://jsonplaceholder.typicode.com/posts/1")
+  .then(response => response.json())
+  .then(data => console.log("3 Dati caricati:", data));
 
-console.log("Fine");
-
+console.log("4 UI aggiornata");
