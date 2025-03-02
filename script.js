@@ -1,12 +1,15 @@
 
-console.log("1 Inizio caricamento...");
+// const numeri = [1, 2, 3];
+// const raddoppiati = numeri.map(n => [n * 2]);
+// console.log(raddoppiati);
+// Output: [[2], [4], [6]]
 
-setTimeout(() => {
-  console.log("2 Mostra animazione di caricamento...");
-}, 0);
+const numeri = [1, 2, 3];
+const raddoppiati = numeri.flatMap(n => [n * 2]);
+console.log(raddoppiati);
+// Output: [2, 4, 6]
 
-fetch("https://jsonplaceholder.typicode.com/posts/1")
-  .then(response => response.json())
-  .then(data => console.log("3 Dati caricati:", data));
-
-console.log("4 UI aggiornata");
+const frasi = ["Ciao mondo", "JavaScript è fantastico"];
+const parole = frasi.flatMap(frase => frase.split(" "));
+console.log(parole);
+// Output: ["Ciao", "mondo", "JavaScript", "è", "fantastico"]
